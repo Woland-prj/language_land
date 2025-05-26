@@ -1,0 +1,28 @@
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./site:/var/www/html:ro,Z
+    depends_on:
+      - php
+    networks:
+      - nginx_network
+
+  php:
+    build: 
+      context: .
+      dockerfile: ./php/Dockerfile
+    container_name: web-php
+    volumes:
+      - ./site:/var/www/html:ro,Z
+    networks:
+      - nginx_network
+
+networks:
+  nginx_network:
+    driver: bridge

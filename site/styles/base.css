@@ -1,0 +1,627 @@
+:root {
+  --primary: #FEC303;
+  --gray: #4B5258;
+  --white: #ffffff;
+  --blue: #E6EEFF;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font: 16px/1 "Euclid Circular B", sans-serif;
+    color: var(--gray);
+    font-weight: 200;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 87rem;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.logo {
+    font: 500 38px/1.5 "Fraunces", serif;
+    color: var(--primary);
+}
+
+.logo a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.menu__bar {
+    width: 55%;
+    margin-bottom: 7.5rem;
+}
+
+.bar {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 20px;
+    margin: 0;
+}
+
+.bar__bar-item a {
+    text-decoration: none;
+    color: var(--gray);
+}
+
+.promo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.promo__text {
+    width: 50%;
+}
+
+.promo__header {
+    font: bold 60px/1.3 "Euclid Circular B", sans-serif;
+    margin: 0 0 5.3rem 0;
+    max-width: 40rem;
+}
+
+.button__primary {
+    border: none;
+    height: 4rem;
+    width: 18.4rem;
+    border-radius: 2.2rem;
+    padding: 0;
+    font: 17px/1 "Euclid Circular B", sans-serif;
+    background-color: var(--primary);
+    color: var(--gray);
+    cursor: pointer;
+}
+
+.button__secondary {
+    border: 1px solid var(--gray);
+    height: 4rem;
+    width: 18.4rem;
+    border-radius: 2.2rem;
+    padding: 0;
+    font: 17px/1 "Euclid Circular B", sans-serif;
+    background-color: transparent;
+    color: var(--gray);
+    cursor: pointer;
+}
+
+.promo__buttons {
+    display: flex;
+    gap: 2.7rem;
+}
+
+.promo__galery {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 75px);
+    gap: 1.31rem;
+}
+
+.promo__image {
+    position: relative;
+    object-fit: cover;
+    display: block;
+    border-radius: 1.87rem;
+}
+
+.promo__image-1 {
+    grid-row: 3 / 6;
+    background: url("../images/promo1.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.promo__image-2 {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    background: url("../images/promo2.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.promo__image-3 {
+    grid-column: 2;
+    grid-row: 4 / 6;
+    background: url("../images/promo3.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.galery__text {
+    position: absolute;
+    bottom: 1.68rem;
+    left: 2.19rem;
+    z-index: 2;
+    color: var(--white);
+    font: 20px/1.6 "Euclid Circular B", sans-serif;
+    width: 16.8rem;
+}
+
+/* Псевдоэлемент с блюром */
+.promo__image_blurred::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);;
+
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  z-index: 1;
+  border-radius: 1.87rem;
+}
+
+.advantages {
+    width: 87rem;
+    align-items: center;
+    margin: 12.5rem 0 0 0;
+}
+
+.preheader-text {
+    font: 20px/1.6 "Euclid Circular B", sans-serif;
+    color: var(--gray);
+    text-align: center;
+    margin-bottom: 3.75rem;
+}
+
+.section-header {
+    font: 42px/1.2 "Euclid Circular B", sans-serif;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 3.75rem;
+}
+
+.advantages-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 15.5rem 15.5rem;
+    gap: 1.31rem;
+}
+
+.advantages-gallery__gallery-item {
+    background: var(--primary);
+    border-radius: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.75rem 2.69rem;
+    position: relative;
+}
+
+.advantages-gallery__gallery-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+    z-index: 1;
+    border-radius: 2.2rem;
+}
+
+.gallery-item__title {
+    top: 1.75rem;
+    left: 2.69rem;
+    font: 22px/1.5 "Euclid Circular B", sans-serif;
+    font-weight: 500;
+    color: var(--white);
+    margin: 0;
+    z-index: 2;
+}
+
+.gallery-item__caption {
+    bottom: 1.75rem;
+    left: 2.69rem;
+    font: 20px/1.5 "Euclid Circular B", sans-serif;
+    font-weight: 200;
+    color: var(--white);
+    max-width: 22.2rem;
+    z-index: 2;
+}
+
+.gallery-item-1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    background: url("../images/advantage1.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.gallery-item-2 {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    background: url("../images/advantage2.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.gallery-item-3 {
+    grid-column: 3 / 4;
+    grid-row: span 2;
+    background: url("../images/advantage3.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.gallery-item-4 {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+    background: url("../images/advantage4.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.gallery-item-5 {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+    background: url("../images/advantage5.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.how-it-works {
+    width: 87rem;
+    align-items: center;
+    margin: 12.5rem 0 0 0;
+}
+
+.progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress__progess-item {
+    position: relative;
+    height: 31.25rem;
+    width: 25%;
+}
+
+.progress-item__name {
+    position: absolute;
+    right: 1.5rem;
+    font: 500px/1 "Euclid Circular B", sans-serif;
+    font-weight: 700;
+    color: var(--blue);
+    z-index: 1;
+}
+
+.progress-item__title {
+    position: relative;
+    padding-top: 13rem;
+    z-index: 2;
+    font: 42px/1 "Euclid Circular B", sans-serif;
+    margin: 0 0 1rem 0;
+}
+
+.progress-item__caption {
+    position: relative;
+    z-index: 2;
+    font: 20px/1.5 "Euclid Circular B", sans-serif;
+    max-width: 15rem;
+}
+
+.reviews {
+    width: 87rem;
+    align-items: center;
+    margin: 7.81rem 0 0 0;
+}
+
+.reviews__container {
+    display: flex;
+    gap: 2.48rem;
+}
+
+.review {
+    display: flex;
+    gap: 1.88rem;
+    border-radius: 1.88rem;
+    padding: 2.9rem;
+    background-color: var(--blue);
+    width: calc(50% - 2.48rem);
+}
+
+.review__avatar {
+    border-radius: 50%;
+    width: 10.2rem;
+    height: 10.2rem;
+}
+
+.review__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-content {
+    font: 20px/1.5 "Euclid Circular B", sans-serif;
+}
+
+.review-author {
+    font: 20px/1.5 "Euclid Circular B", sans-serif;
+    font-weight: 500;
+}
+
+.login-form {
+    margin-top: 15rem;
+    width: 87rem;
+    align-items: center;
+}
+
+.form-container {
+    border: 1px solid var(--blue);
+    padding: 4.81rem;
+    border-radius: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-caption__title {
+    font: 42px/1.2 "Euclid Circular B", sans-serif;
+    font-weight: 500;
+    color: var(--primary);
+    margin: 0 0 5.94rem 0;
+}
+
+.login-form__caption {
+    font: 20px/1.6 "Euclid Circular B", sans-serif;
+}
+
+.form-caption__text p {
+    font-weight: 700;
+    margin: 0 0 2.5rem 0;
+}
+
+.form-caption__list {
+    max-width: 33.38rem;
+}
+
+.login-form__lable {
+    display: block;
+    margin-bottom: 0.88rem;
+    font: 20px/1.5 "Euclid Circular B", sans-serif;
+    font-weight: 500;
+    color: var(--gray);
+}
+
+.login-form__field {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.94rem 1.94rem;
+    border-radius: 1.9rem;
+    border: 1px solid var(--gray);
+    font: 20px/1.5 "Euclid Circular B", sans-serif;
+    color: var(--gray);
+    font-weight: 200;
+    margin-bottom: 2.5rem;
+}
+
+.login-form__button-wrapper {
+    display: flex;
+    gap: 1.94rem;
+}
+
+.login-form__select {
+    border: none;
+    height: 4rem;
+    width: 18.4rem;
+    border-radius: 2.2rem;
+    padding: 0;
+    font: 20px/1 "Euclid Circular B", sans-serif;
+    background-color: var(--blue);
+    color: var(--gray);
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-left: 1.94rem;
+    background-image: url('../images/arrow.svg');
+    background-repeat: no-repeat;
+    background-position: right 1.31rem center;
+    background-size: 1.38rem;
+}
+
+.login-form__button {
+    border: none;
+    height: 4rem;
+    width: 18.4rem;
+    border-radius: 2.2rem;
+    padding: 0;
+    font: 20px/1 "Euclid Circular B", sans-serif;
+    background-color: var(--primary);
+    color: var(--gray);
+    cursor: pointer;
+}
+
+.about {
+    margin-top: 12.5rem;
+    width: 87rem;
+    align-items: center;
+}
+
+.about__logo-caption span {
+    display: inline;
+    font: 500 30px/1.5 "Fraunces", serif;
+    color: var(--primary);
+}
+
+.about__logo-caption p {
+    display: inline;
+    font: 30px/1.5 "Euclid Circular B", sans-serif;
+    color: var(--gray);
+}
+
+.about__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 6.32rem;
+    align-items: center;
+}
+
+.about__logo-caption {
+    width: calc(45% - 3.16rem);
+}
+
+.about__text {
+    width: calc(55% - 3.16rem);
+    font: 20px/1.6 "Euclid Circular B", sans-serif;
+    color: var(--gray);
+}
+
+.lessons-galery {
+    margin-top: 12.5rem;
+    width: 87rem;
+    align-items: center;
+    margin-bottom: 12.5rem;
+}
+
+.lessons-galery__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 12.5rem);
+    gap: 1.88rem;
+}
+
+.lessons-galery__item {
+    background-color: var(--primary);
+    border-radius: 1.88rem;
+}
+
+.lessons-galery__item-1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background: url("../images/lessons1.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.lessons-galery__item-2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background: url("../images/lessons2.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.lessons-galery__item-3 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 5;
+    background: url("../images/lessons3.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.lessons-galery__item-4 {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+    background: url("../images/lessons4.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.lessons-galery__item-5 {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    background: url("../images/lessons5.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.lessons-galery__item-6 {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    background: url("../images/lessons6.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.lessons-galery__item-7 {
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+    background: url("../images/lessons7.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.lessons-galery__item-8 {
+    grid-column: 3 / 5;
+    grid-row: 3 / 5;
+    background: url("../images/lessons8.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.footer {
+    width: 87rem;
+    align-items: baseline;
+    padding: 5.38rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper_footer {
+    background-color: var(--blue);
+}
+
+.footer__info {
+    max-width: 21rem;
+}
+
+.footer__info p {
+    margin-bottom: 1.38rem;
+}
+
+.footer_link {
+    text-decoration: none;
+    color: var(--gray);
+    font: 20px/1.6 "Euclid Circular B", sans-serif;
+}
+
+.footer_link span {
+    display: inline;
+    font: 500 20px/1.6 "Fraunces", serif;
+}
+
+.contacts__header {
+    font: 30px/1.2 "Euclid Circular B", sans-serif;
+    font-weight: 500;
+    margin-bottom: 1.38rem;
+}
+
+.contacts__text {
+    font: 20px/1.6 "Euclid Circular B", sans-serif;
+    color: var(--gray);
+}
+
+.footer__socials {
+    display: flex;
+    gap: 1.43rem;
+}
+
+.footer__social {
+    display: block;
+}
