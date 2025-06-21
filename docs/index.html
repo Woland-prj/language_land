@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
         <title>Language Land</title>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href="styles/fonts.css">
         <link rel="stylesheet" href="styles/base.css">
+        <script src="scripts/form.js" defer></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
@@ -137,19 +138,19 @@
                             </ul>
                         </div>
                     </div>
-                    <form class="login-form__content">
-                        <lable for="name-field" class="login-form__lable">Имя</lable>
-                        <input type="text" class="login-form__field" name="name-field" placeholder="Введите ваше имя"/>
-                        <lable for="email-field" class="login-form__lable">Email</lable>
-                        <input type="email" class="login-form__field" name="email-field" placeholder="Введите ваш email"/>
-                        <lable for="course-field" class="login-form__lable">Курс</lable>
+                    <form class="login-form__content" id="application-form">
+                        <label for="name" class="login-form__label">Имя</label>
+                        <input type="text" class="login-form__field" name="name" placeholder="Введите ваше имя" id="name"/>
+                        <label for="email" class="login-form__label">Email</label>
+                        <input type="email" class="login-form__field" name="email" placeholder="Введите ваш email" id="email"/>
+                        <label for="course" class="login-form__label">Курс</label>
                         <div class="login-form__button-wrapper">
-                            <select class="login-form__select" name="course-field">
+                            <select class="login-form__select" name="course" id="course">
                                 <option value="-">Выберите курс</option>
-                                <option value="English">Английский</option>
-                                <option value="German">Немецкий</option>
+                                <option value="english">Английский</option>
+                                <option value="german">Немецкий</option>
                             </select>
-                            <input type="submit" class="login-form__button" value="Начать пробный урок">
+                            <input type="submit" class="login-form__button" value="Начать пробный урок" id="send-button">
                         </div>
                     </form>
                 </div>

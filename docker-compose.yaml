@@ -7,21 +7,41 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./docs:/var/www/html:ro,Z
+      - ./docs:/var/www/html
     depends_on:
       - php
     networks:
       - nginx_network
 
   php:
-    build: 
+    build:
       context: .
       dockerfile: ./php/Dockerfile
     container_name: web-php
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: langland
     volumes:
-      - ./docs:/var/www/html:ro,Z
+      - ./docs:/var/www/html
     networks:
       - nginx_network
+
+  mysql:
+    image: mysql
+    container_name: web-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: langland
+      TZ: Europe/Moscow
+    ports:
+      - "3306:3306"
+    networks:
+      - nginx_network
+    volumes:
+      - ./data/db/volume:/var/lib/mysql
+      - ./data/db/db.cnf:/etc/mysql/conf.d/my.cnf
 
 networks:
   nginx_network:
