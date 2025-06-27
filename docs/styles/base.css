@@ -1,8 +1,10 @@
 :root {
-  --primary: #FEC303;
-  --gray: #4B5258;
-  --white: #ffffff;
-  --blue: #E6EEFF;
+    --primary: #FEC303;
+    --gray: #4B5258;
+    --white: #ffffff;
+    --blue: #E6EEFF;
+    --dark-gray: #33393f; /* Added for darker hover/active states on gray */
+    --light-gray: #D0D0D0; /* Added for disabled state */
 }
 
 body {
@@ -39,6 +41,17 @@ body {
 .logo a{
     color: inherit;
     text-decoration: none;
+    transition: color 0.2s ease-in-out; /* Smooth transition for hover */
+}
+
+.logo a:hover,
+.logo a:focus {
+    color: var(--dark-gray); /* Darken text on hover/focus */
+    outline: none; /* Remove default focus outline */
+}
+
+.logo a:active {
+    color: #2a2e33; /* Even darker on active */
 }
 
 .menu__bar {
@@ -60,6 +73,17 @@ body {
 .bar__bar-item a {
     text-decoration: none;
     color: var(--gray);
+    transition: color 0.2s ease-in-out; /* Smooth transition for hover */
+}
+
+.bar__bar-item a:hover,
+.bar__bar-item a:focus {
+    color: var(--primary); /* Change to primary color on hover/focus */
+    outline: none;
+}
+
+.bar__bar-item a:active {
+    color: #d1a500; /* Slightly darker primary for active */
 }
 
 .promo {
@@ -87,6 +111,21 @@ body {
     background-color: var(--primary);
     color: var(--gray);
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.button__primary:hover {
+    background-color: #e0b000; /* Slightly darker primary on hover */
+}
+
+.button__primary:focus {
+    outline: 2px solid var(--gray); /* Outline for focus */
+    outline-offset: 2px;
+}
+
+.button__primary:active {
+    background-color: #d1a500; /* Even darker primary on active */
+    transform: translateY(1px); /* Slight press effect */
 }
 
 .button__secondary {
@@ -99,6 +138,23 @@ body {
     background-color: transparent;
     color: var(--gray);
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.button__secondary:hover {
+    background-color: var(--gray); /* Fill with gray on hover */
+    color: var(--white); /* Text becomes white on hover */
+}
+
+.button__secondary:focus {
+    outline: 2px solid var(--primary); /* Outline with primary color for focus */
+    outline-offset: 2px;
+}
+
+.button__secondary:active {
+    background-color: var(--dark-gray); /* Darker gray on active */
+    border-color: var(--dark-gray);
+    transform: translateY(1px); /* Slight press effect */
 }
 
 .promo__buttons {
@@ -124,7 +180,7 @@ body {
 .promo__image-1 {
     grid-row: 3 / 6;
     background: url("../images/promo1.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -132,7 +188,7 @@ body {
     grid-column: 2;
     grid-row: 1 / 4;
     background: url("../images/promo2.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -140,7 +196,7 @@ body {
     grid-column: 2;
     grid-row: 4 / 6;
     background: url("../images/promo3.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -154,22 +210,21 @@ body {
     width: 16.8rem;
 }
 
-/* Псевдоэлемент с блюром */
 .promo__image_blurred::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);;
 
-  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-  z-index: 1;
-  border-radius: 1.87rem;
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    z-index: 1;
+    border-radius: 1.87rem;
 }
 
 .advantages {
@@ -246,7 +301,7 @@ body {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
     background: url("../images/advantage1.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -254,7 +309,7 @@ body {
     grid-column: 1 / 3;
     grid-row: 2 / 3;
     background: url("../images/advantage2.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -262,7 +317,7 @@ body {
     grid-column: 3 / 4;
     grid-row: span 2;
     background: url("../images/advantage3.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -270,7 +325,7 @@ body {
     grid-column: 4 / 5;
     grid-row: 1 / 2;
     background: url("../images/advantage4.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -278,7 +333,7 @@ body {
     grid-column: 4 / 5;
     grid-row: 2 / 3;
     background: url("../images/advantage5.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -418,6 +473,20 @@ body {
     color: var(--gray);
     font-weight: 200;
     margin-bottom: 2.5rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.login-form__field:focus {
+    border-color: var(--primary); /* Highlight border on focus */
+    box-shadow: 0 0 0 3px rgba(254, 195, 3, 0.3); /* Add a subtle glow */
+    outline: none;
+}
+
+.login-form__field:disabled {
+    background-color: var(--light-gray);
+    border-color: var(--light-gray);
+    color: #888;
+    cursor: not-allowed;
 }
 
 .login-form__button-wrapper {
@@ -443,7 +512,29 @@ body {
     background-repeat: no-repeat;
     background-position: right 1.31rem center;
     background-size: 1.38rem;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
+
+.login-form__select:hover {
+    background-color: #d1e2ff; /* Slightly darker blue on hover */
+}
+
+.login-form__select:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.login-form__select:active {
+    background-color: #c0d8ff; /* Even darker blue on active */
+}
+
+.login-form__select:disabled {
+    background-color: var(--light-gray);
+    color: #888;
+    cursor: not-allowed;
+    background-image: none; /* Remove arrow for disabled select */
+}
+
 
 .login-form__button {
     border: none;
@@ -455,6 +546,27 @@ body {
     background-color: var(--primary);
     color: var(--gray);
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.login-form__button:hover {
+    background-color: #e0b000;
+}
+
+.login-form__button:focus {
+    outline: 2px solid var(--gray);
+    outline-offset: 2px;
+}
+
+.login-form__button:active {
+    background-color: #d1a500;
+    transform: translateY(1px);
+}
+
+.login-form__button:disabled {
+    background-color: var(--light-gray);
+    color: #888;
+    cursor: not-allowed;
 }
 
 .about {
@@ -515,7 +627,7 @@ body {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     background: url("../images/lessons1.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -523,7 +635,7 @@ body {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     background: url("../images/lessons2.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -531,7 +643,7 @@ body {
     grid-column: 1 / 2;
     grid-row: 3 / 5;
     background: url("../images/lessons3.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -539,7 +651,7 @@ body {
     grid-column: 2 / 4;
     grid-row: 1 / 3;
     background: url("../images/lessons4.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -547,7 +659,7 @@ body {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
     background: url("../images/lessons5.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -555,7 +667,7 @@ body {
     grid-column: 2 / 3;
     grid-row: 4 / 5;
     background: url("../images/lessons6.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -563,7 +675,7 @@ body {
     grid-column: 4 / 5;
     grid-row: 1 / 3;
     background: url("../images/lessons7.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -571,7 +683,7 @@ body {
     grid-column: 3 / 5;
     grid-row: 3 / 5;
     background: url("../images/lessons8.png");
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -599,6 +711,17 @@ body {
     text-decoration: none;
     color: var(--gray);
     font: 20px/1.6 "Euclid Circular B", sans-serif;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer_link:hover,
+.footer_link:focus {
+    color: var(--primary);
+    outline: none;
+}
+
+.footer_link:active {
+    color: #d1a500;
 }
 
 .footer_link span {
@@ -624,4 +747,21 @@ body {
 
 .footer__social {
     display: block;
+}
+
+.footer__social img {
+    transition: transform 0.2s ease-in-out;
+}
+
+.footer__social:hover img {
+    transform: translateY(-3px); /* Subtle lift effect */
+}
+
+.footer__social:focus img {
+    outline: 2px solid var(--primary); /* Outline for accessibility */
+    outline-offset: 2px;
+}
+
+.footer__social:active img {
+    transform: translateY(1px); /* Slight press effect */
 }

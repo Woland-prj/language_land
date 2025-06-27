@@ -1,0 +1,243 @@
+@media (max-width: 1024px) {
+    .wrapper,
+    .header,
+    .advantages,
+    .how-it-works,
+    .reviews,
+    .login-form,
+    .about,
+    .lessons-galery,
+    .footer {
+        width: 90%;
+        padding: 0 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .logo {
+        margin-bottom: 50px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu__bar {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+
+    .bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .promo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .promo__text,
+    .promo__galery {
+        width: 100%;
+        text-align: center;
+    }
+
+    .promo__header {
+        font-size: 48px;
+        margin-bottom: 3rem;
+        max-width: none;
+    }
+
+    .promo__buttons {
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+
+    .promo__galery {
+        width: 100%;
+        text-align: center;
+        grid-template-rows: 1fr 1fr 1fr 0.5fr;
+        height: 400px;
+    }
+
+    .promo__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .promo__image-1 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 5;
+    }
+
+    .promo__image-3 {
+        grid-column: 2 / 3;
+        grid-row: 3 / 5;
+    }
+
+    .promo__image-2 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+    }
+
+    .galery__text {
+        width: auto;
+        left: 1rem;
+        right: 1rem;
+        text-align: left;
+        font-size: 18px;
+    }
+
+    .advantages {
+        margin-top: 8rem;
+    }
+
+    .section-header {
+        font-size: 36px;
+        margin-bottom: 2.5rem;
+    }
+
+    .advantages-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .gallery-item-1,
+    .gallery-item-2,
+    .gallery-item-3,
+    .gallery-item-4,
+    .gallery-item-5 {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+
+    .progress {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .progress__progess-item {
+        width: 45%;
+        height: auto;
+        text-align: center;
+    }
+
+    .progress-item__name {
+        position: static;
+        font-size: 200px;
+        margin-bottom: 1rem;
+    }
+
+    .progress-item__title {
+        padding-top: 0;
+        font-size: 32px;
+    }
+
+    .progress-item__caption {
+        max-width: none;
+    }
+
+    .reviews__container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .review {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .review__avatar {
+        width: 8rem;
+        height: 8rem;
+        margin-bottom: 1rem;
+    }
+
+    .login-form {
+        margin-top: 8rem;
+    }
+
+    .form-container {
+        flex-direction: column;
+        padding: 3rem;
+    }
+
+    .form-caption__title {
+        font-size: 36px;
+        margin-bottom: 3rem;
+    }
+
+    .login-form__button-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .login-form__select,
+    .login-form__button {
+        width: 100%;
+    }
+
+    .about {
+        margin-top: 8rem;
+    }
+
+    .about__container {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .about__logo-caption,
+    .about__text {
+        width: 100%;
+    }
+
+    .about__logo-caption span,
+    .about__logo-caption p {
+        font-size: 24px;
+    }
+
+    .lessons-galery {
+        margin-top: 8rem;
+        margin-bottom: 8rem;
+    }
+
+    .lessons-galery__container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .lessons-galery__item {
+        grid-column: span 1;
+        grid-row: auto;
+        height: 15rem;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    .footer__info,
+    .footer__contacts {
+        max-width: none;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .footer__socials {
+        justify-content: center;
+    }
+}
+
+
